@@ -1,7 +1,7 @@
 <template>
     <div>
         <ckeditor :editor="editor" v-model="messenger_entry" :config="editorConfig"></ckeditor>
-        <button class="pt-2 btn btn-primary" @click="update">Update Chat</button>
+        <button class="mt-2 btn btn-primary" @click="update">Update Chat</button>
     </div>
 </template>
 
