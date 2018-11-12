@@ -60578,7 +60578,11 @@ var render = function() {
         }
       }),
       _vm._v(" "),
-      _c("button", { on: { click: _vm.update } }, [_vm._v("Click")])
+      _c(
+        "button",
+        { staticClass: "pt-2 btn btn-primary", on: { click: _vm.update } },
+        [_vm._v("Update Chat")]
+      )
     ],
     1
   )

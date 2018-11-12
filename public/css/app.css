@@ -10466,3 +10466,7 @@ a.text-dark:focus {
   }
 }
 
+#app {
+  padding: 10px;
+}
+
