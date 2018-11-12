@@ -60512,6 +60512,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.$store.commit("messenger_entries");
         }
     },
+    mounted: function mounted() {
+        console.log("just mount it.. =P");
+    },
     data: function data() {
         return {
             editor: __WEBPACK_IMPORTED_MODULE_1__ckeditor_ckeditor5_build_classic___default.a,

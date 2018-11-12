@@ -9,7 +9,7 @@
     import Vuex from "vuex";
     import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-    export default {
+    export default {        
         computed:{
             messenger_entry:{
                 get(){
@@ -24,6 +24,9 @@
             update(){
                 this.$store.commit("messenger_entries");
             }
+        },
+        mounted(){
+            console.log("just mount it.. =P");
         },
         data() {
             return {
