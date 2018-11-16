@@ -1,13 +1,14 @@
 <template>
     <div>
-        <ckeditor :editor="editor" v-model="messenger_entry" :config="editorConfig"></ckeditor>
+        <textarea v-model="messenger_entry"></textarea>
         <button class="mt-2 btn btn-primary" @click="update">Update Chat?</button>
     </div>
 </template>
 
 <script>
-    import Vuex from "vuex";
-    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+    import tinymce from 'tinymce/tinymce';
+
+    import 'tinymce/themes/modern/theme';
 
     export default {        
         computed:{
@@ -26,14 +27,22 @@
             }
         },
         mounted(){
-            console.log("just mount it.. =P");
-        },
-        data() {
-            return {
-                editor: ClassicEditor,
-                editorConfig: {
-                    // The configuration of the editor.
+            let that = this;
+            let target = this.$el.querySelector("textarea");            
+            this.config = {
+                target:target,
+                skin_url:'/tinymce/skins/lightgray',
+                setup(editor){
+                    editor.on("keyup change", function(){
+                        that.messenger_entry = editor.getContent();
+                    });
                 }
+            }
+            tinymce.init(this.config);
+        },
+        data: function(){
+            return {
+                config: {}
             };
         }
     }
